@@ -52,8 +52,8 @@ void drawToModule(){
   if (!moduleOff){
     unsigned long elapSecond = round(millis() / 1000);
     unsigned long totalSecond = gapSecond + elapSecond;
-    byte pos = totalSecond % 4;
-    if (pos>2) pos=1;
+    byte pos = 0; // totalSecond % 4;
+    //if (pos>2) pos=1;
     tm.clearDisplay();
     tm.setDisplayToString(formatTime(totalSecond),(dots * 80),pos);
   }
